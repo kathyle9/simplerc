@@ -16,6 +16,32 @@ Title <- "Title of your paper goes here"
 
 # simplerc
 
+## Overview
+simplerc is a tool for visualizing random walks. Using simplerc, you can simulate a random walk or fit using your own data. Fitting gives two parameters: mean and standard deviation, which describes the random walk. simplerc can also be used to plot the cumulative distribution of the random walk as a line plot.
+
+## Example
+First, we simulate random walk data with the function `simulate_walk`, which takes number of steps, mean, and standard deviation as inputs.
+
+```{}
+t <- 100
+mu <- 0.5
+sigma <- 2
+
+walk <- simulate_walk(t, mu, sigma)
+plot_walk(walk)
+```
+
+Next, we will try to fit our simulated random walk data.
+```{}
+params <- fit_walk(walk)
+params
+```
+
+Finally, we can see that we have recovered the correct random walk parameters from our fit.
+
+
+
+
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh///master?urlpath=rstudio)
 
 This repository contains the data and code for our paper:
